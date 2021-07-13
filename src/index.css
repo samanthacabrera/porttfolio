@@ -1,13 +1,257 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Playfair Display", serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 15vw;
+  letter-spacing: -1vw;
+  line-height: 12vw;
+  color: blanchedalmond;
+}
+
+h2 {
+  font-size: 2vw;
+  color: whitesmoke;
+  letter-spacing: 2vw;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3%;
+}
+
+.button {
+  color: whitesmoke;
+  font-size: 1.5vw;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.button:hover {
+  border: 5px solid white;
+  padding: 1%;
+}
+
+@media (max-width: 1000px) {
+  .button {
+    font-size: 3vw;
+  }
+}
+
+/* HOME */
+
+.Home {
+  background-image: url(https://images.unsplash.com/photo-1521194263619-39ecc5b55c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+
+@media (max-width: 1000px) {
+  .Home {
+    padding-top: 15%;
+  }
+}
+
+.Home h1 {
+  font-size: vw;
+  letter-spacing: -1vw;
+  color: blanchedalmond;
+  text-align: center;
+  padding: 4%;
+}
+
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover,
+.hvr-shrink:focus,
+.hvr-shrink:active {
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.scroll-down {
+  color: whitesmoke;
+  position: relative;
+  left: 50%;
+  padding-bottom: 5%;
+  animation: fade_move_down 3s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+@keyframes fade_move_down {
+  0% {
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+}
+
+.Home a {
+  text-align: center;
+  color: whitesmoke;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10vw;
+  display: block;
+  padding: 1%;
+}
+
+.Home a:hover span {
+  display: none;
+}
+
+.about-link:hover:before {
+  content: "my story";
+  color: rgba(13, 13, 13, 0.25);
+}
+
+.work-link:hover:before {
+  content: "my projects";
+  color: rgba(13, 13, 13, 0.25);
+}
+
+.style-link:hover:before {
+  content: "my brand";
+  color: rgba(13, 13, 13, 0.25);
+}
+
+.process-link:hover:before {
+  content: "my blank";
+  color: rgba(13, 13, 13, 0.25);
+}
+
+.contact-link:hover:before {
+  content: "my info";
+  color: rgba(13, 13, 13, 0.25);
+}
+/* NAVBAR */
+.Navbar {
+  width: 100px;
+  position: fixed;
+  padding-left: 5%;
+  z-index: 3;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.Navbar a {
+  color: white;
+  font-size: 1.5vw;
+  transform: rotate(270deg);
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 90% 0%;
+}
+
+@media (max-width: 800px) {
+  .Navbar a {
+    font-size: 3vw;
+  }
+}
+
+.Navbar a:hover {
+  text-decoration-line: underline;
+}
+
+/* ABOUT */
+.About {
+  background-image: url(https://images.unsplash.com/photo-1521194263619-39ecc5b55c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding-left: 5%;
+}
+.bio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+}
+
+.bio-heading {
+  font-size: 13vw;
+  text-align: left;
+  padding: 15% 0% 0% 25%;
+}
+
+.bio-heading:hover span {
+  display: none;
+}
+
+.bio-heading:hover:before {
+  content: "Nice to meet you";
+}
+
+.bio-content {
+  padding: 30%;
+}
+
+@media (max-width: 700px) {
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .bio-heading {
+    padding: 30%;
+  }
+  .bio-content {
+    padding: 15% 30%;
+  }
+}
+
+/* WORK */
+.Work {
+  background-image: url(https://images.unsplash.com/photo-1521194263619-39ecc5b55c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding-left: 5%;
+  padding-bottom: 10%;
+}
+
+.work-heading {
+  text-align: center;
+  padding: 10%;
+}
+
+.Work p {
+  padding: 10% 30% 0% 30%;
+  text-align: middle;
+  color: rgba(13, 13, 13, 0.5);
+}
+
+/* CONTACT */
+.Contact {
+  background-image: url(https://images.unsplash.com/photo-1521194263619-39ecc5b55c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+.contact-heading {
+  text-align: center;
+  padding: 10%;
+}
+.contact-content {
+  text-align: center;
+  padding: 5% 30%;
+  color: rgba(13, 13, 13, 0.5);
 }
